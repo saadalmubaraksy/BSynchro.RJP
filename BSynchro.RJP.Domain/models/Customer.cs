@@ -27,9 +27,12 @@ namespace BSynchro.RJP.Domain.models
             return new Customer(name, lastName);
         }
 
-        public void AddAccount(double balance, DateTime creationDate)
+        public Account AddAccount(double balance, DateTime creationDate)
         {
-            Accounts.Add(Account.Create(balance, creationDate, Id));
+            var account = Account.Create(balance, creationDate, Id);
+            Accounts.Add(account);
+
+            return account;
         }
     }
 }

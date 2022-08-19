@@ -33,9 +33,12 @@ namespace BSynchro.RJP.Domain.models
             return new Account(balance, creationDate, customerId);
         }
 
-        public void AddTransaction(TransactionType transactionType, double amount, DateTime transactionDate)
+        public Transaction AddTransaction(TransactionType transactionType, double amount, DateTime transactionDate)
         {
-            Transactions.Add(Transaction.Create(transactionType, amount, transactionDate, Id));
+            var transaction = Transaction.Create(transactionType, amount, transactionDate, Id);
+            Transactions.Add(transaction);
+
+            return transaction;
         }
 
     }
