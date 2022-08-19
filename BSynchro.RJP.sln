@@ -5,6 +5,20 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSynchro.RJP", "BSynchro.RJP\BSynchro.RJP.csproj", "{D5CD511E-33B3-4563-A72A-B08106A1D60B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6828DB05-85BA-4CDD-8AAC-F6E2A076F1AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSynchro.RJP.Domain", "BSynchro.RJP.Domain\BSynchro.RJP.Domain.csproj", "{B8F891B2-33FB-44DB-81F1-2B50D62AC49B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSynchro.RJP.DomainShared", "BSynchro.RJP.DomainShared\BSynchro.RJP.DomainShared.csproj", "{92CABA89-5A89-4B8D-A39D-5AA65BC4660C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSynchro.RJP.Application", "BSynchro.RJP.Application\BSynchro.RJP.Application.csproj", "{A97DC421-BCF9-4996-BF7C-A683E8BE20BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSynchro.RJP.ApplicationContract", "BSynchro.RJP.ApplicationContract\BSynchro.RJP.ApplicationContract.csproj", "{689E0C9B-D2F5-41B8-B401-82AE58850DC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSynchro.RJP.EntityFramework", "BSynchro.RJP.EntityFramework\BSynchro.RJP.EntityFramework.csproj", "{C314BABE-4674-408B-968B-59E664A475AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSynchro.RJP.HttpAPI", "BSynchro.RJP.HttpAPI\BSynchro.RJP.HttpAPI.csproj", "{29A39AAB-472D-409D-9054-A693110D5E8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +29,30 @@ Global
 		{D5CD511E-33B3-4563-A72A-B08106A1D60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5CD511E-33B3-4563-A72A-B08106A1D60B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5CD511E-33B3-4563-A72A-B08106A1D60B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8F891B2-33FB-44DB-81F1-2B50D62AC49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F891B2-33FB-44DB-81F1-2B50D62AC49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F891B2-33FB-44DB-81F1-2B50D62AC49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F891B2-33FB-44DB-81F1-2B50D62AC49B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92CABA89-5A89-4B8D-A39D-5AA65BC4660C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92CABA89-5A89-4B8D-A39D-5AA65BC4660C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92CABA89-5A89-4B8D-A39D-5AA65BC4660C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92CABA89-5A89-4B8D-A39D-5AA65BC4660C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A97DC421-BCF9-4996-BF7C-A683E8BE20BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97DC421-BCF9-4996-BF7C-A683E8BE20BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97DC421-BCF9-4996-BF7C-A683E8BE20BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97DC421-BCF9-4996-BF7C-A683E8BE20BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689E0C9B-D2F5-41B8-B401-82AE58850DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689E0C9B-D2F5-41B8-B401-82AE58850DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689E0C9B-D2F5-41B8-B401-82AE58850DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689E0C9B-D2F5-41B8-B401-82AE58850DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C314BABE-4674-408B-968B-59E664A475AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C314BABE-4674-408B-968B-59E664A475AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C314BABE-4674-408B-968B-59E664A475AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C314BABE-4674-408B-968B-59E664A475AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29A39AAB-472D-409D-9054-A693110D5E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A39AAB-472D-409D-9054-A693110D5E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A39AAB-472D-409D-9054-A693110D5E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A39AAB-472D-409D-9054-A693110D5E8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
