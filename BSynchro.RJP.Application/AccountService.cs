@@ -30,6 +30,11 @@ namespace BSynchro.RJP.Application
             Customer customer = _repository.Customer
                 .FindByCondition(x=>x.Id == createAccountRequest.CustomerId).FirstOrDefault();
 
+            if(customer == null)
+            {
+                throw new Exception("Customer not found");
+            }
+
             var account = customer.AddAccount(createAccountRequest.InitialCredit,DateTime.UtcNow);
 
             if (createAccountRequest.InitialCredit > 0)
@@ -37,6 +42,8 @@ namespace BSynchro.RJP.Application
                 account.AddTransaction(TransactionType.INITIAL, createAccountRequest.InitialCredit, DateTime.UtcNow);
             }
             _repository.Customer.Update(customer);
+
+            _repository.Save();
         }
     }
 }

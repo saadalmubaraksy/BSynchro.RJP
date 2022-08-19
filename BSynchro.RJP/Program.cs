@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using BSynchro.RJP.Application;
 using BSynchro.RJP.ApplicationContract.Interfaces;
+using BSynchro.RJP.ApplicationContract.profiles;
 using BSynchro.RJP.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,13 +21,26 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+
+    options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+});
 
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureRepositoryWrapper();
 builder.Services.AddTransient<ICustomerService, CustomerService>();
 builder.Services.AddTransient<IAccountService, AccountService>();
 builder.Services.AddAutoMapper(typeof(Program));
+
+// Auto Mapper Configurations
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new CustomerProfile());
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
 

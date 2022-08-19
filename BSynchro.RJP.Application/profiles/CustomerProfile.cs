@@ -11,9 +11,12 @@ namespace BSynchro.RJP.ApplicationContract.profiles
 {
     public class CustomerProfile:Profile
     {
-        public CustomerProfile(string profileName) : base(profileName)
+        public CustomerProfile() 
         {
             CreateMap<Customer, CustomerDto>();
+            CreateMap<CustomerDto, Customer>();
+            CreateMap<Account, CustomerAccountDto>();
+
         }
     }
 }

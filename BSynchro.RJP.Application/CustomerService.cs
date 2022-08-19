@@ -29,7 +29,19 @@ namespace BSynchro.RJP.Application
 
         public List<CustomerDto> GetAllCustomer()
         {
-            return _mapper.Map<List<CustomerDto>>(_repository.Customer.FindAll().ToList());
+            var customers = _repository.Customer.FindAll().ToList();
+            
+            return _mapper.Map<List<CustomerDto>>(customers);
+        }
+
+        public void CreateCustomer(string name, string lastName)
+        {
+            if(!string.IsNullOrEmpty(lastName) && !string.IsNullOrEmpty(name))
+            {
+                _repository.Customer.Create(Customer.Create(name, lastName));
+                _repository.Save();
+            }
+            //throw new Exception();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace BSynchro.RJP.ApplicationContract.Interfaces
     public interface ICustomerService
     {
         CustomerDto GetCustomerById(int customerId);
-        List<CustomerDto> GetAllCustomer();
+        void CreateCustomer(string name,string lastName);
+        List<CustomerDto> GetAllCustomer(); 
     }
 }

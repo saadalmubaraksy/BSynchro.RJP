@@ -21,16 +21,22 @@ namespace BSynchro.RJP.HttpAPI
             _customerService = customerService;
         }
 
-        [HttpGet(Name = "GetCustomerById")]
-        public CustomerDto GetCustomerById(int customerId)
+        //[HttpGet(Name = "GetCustomerById/{id}")]
+        //public CustomerDto GetCustomerById(int customerId)
+        //{
+        //    return _customerService.GetCustomerById(customerId);
+        //}
+
+        [HttpGet(Name = "GetAllCustomers")]
+        public List<CustomerDto> GetAllCustomers()
         {
-            return _customerService.GetCustomerById(customerId);
+            return _customerService.GetAllCustomer();
         }
 
-        //[HttpGet(Name = "GetAllCustomers")]
-        //public List<CustomerDto> GetAllCustomers()
-        //{
-        //    return _customerService.GetAllCustomer();
-        //}
+        [HttpPost(Name = "Create Customer")]
+        public void CreateCustomer(string fName,string lName)
+        {
+            _customerService.CreateCustomer(fName,lName);
+        }
     }
 }
